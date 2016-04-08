@@ -1,0 +1,19 @@
+<div class="col-sm-12" ng-init="vm.getMenu()">
+	<div class="row">	
+		<div ng-repeat="menu in vm.menu.data">
+			<div class="col-sm-3">
+				<b>{{menu.data}}</b>
+				<div ng-repeat="option in menu.links">
+					<a href="#{{option.rel}}">{{option.href}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div ng-init="vm.getLinks()">
+	<div ng-repeat="link in vm.links">			
+		<a href="#{{link.criar.href}}">Criar: {{link.criar.href}}</a>
+		<a href="#{{link.listar.href}}">Listar: {{link.listar.href}}</a>								
+	</div>
+</div> -->

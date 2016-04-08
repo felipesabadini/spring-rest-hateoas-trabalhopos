@@ -1,0 +1,44 @@
+<div class="col-sm-12">
+	<div class="row">
+		<table class="table table-striped" ng-init="vm.list()">
+			<thead>
+				<tr>
+					<th>
+						Order Number
+					</th>
+					<th>
+						Customer Name
+					</th>					
+					<th>						
+					</th>
+					<th>					
+					</th>
+					<th>
+					</th>													
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="order in vm.orders">
+					<td>
+						{{order.entity.orderNumber}}
+					</td>
+					<td>
+						{{order.entity.customer.name}}
+					</td>					
+					<td ng-repeat="link in order.data[0].links">
+						<a href="#/{{link.rel}}">{{link.href}}</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<div>
+			<b>Options:</b>	
+			<div ng-repeat="option in vm.menu.links">
+				<a href="#{{option.rel}}" ng-if="option.href == 'home'">{{option.href}}</a>
+				<a href="#{{option.rel}}" ng-if="option.href != 'home'">{{option.href}}  {{vm.menu.data}}</a>
+			</div>
+		</div>		
+	</div>
+</div>
